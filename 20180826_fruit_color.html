@@ -1,0 +1,40 @@
+<h1>Answer me</h1>
+
+<input type="text" name="question"><br>
+
+<input type="button" onclick="reply()" value="Submit">
+<input type="button" onclick="test()" value="Test">
+
+
+<script>
+//TDD = test driven development
+  
+function reply()
+{
+    var q = document.getElementsByName("question")[0].value;
+    var answer = "don't know";
+  
+    if (q == "orange") {
+        answer = "orange";
+    }
+  
+    alert(answer);
+    return answer;
+}
+  
+function test()
+{
+    document.getElementsByName("question")[0].value = "orange";
+    var a = reply();
+    if (a != "orange") {
+       alert("bug!"); 
+    }
+    else {
+       alert("no bug!");
+    }
+}
+
+</script>
+
+
+<p>Made on 2018/08/26 by Shun Ohmori, Kana Matsumura, Kawai-san, and Amil Khanzda for introductory Zen Programming workshop</p>
