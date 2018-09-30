@@ -1,0 +1,67 @@
+<h1>Computer Government</h1>
+A computer government that listens to everyone real opinion, understanding the human mind with AI, and making a decision.<br>
+みんなの生声を聴いて、人間の心を理解してAIで判断するコンピューター政府です。
+
+
+<h2>Ballot 投票</h2>
+What should the retirement age be?<br>
+定年は何歳にすべきか？<br>
+<input type="text" name="ans"><br>
+Why?<br>
+<input type="text" name="why"><br>
+
+<input type="button" onclick="decide()" value="Submit">
+<input type="button" onclick="test()" value="Test">
+
+
+<script>
+function decide()
+{	
+    var ans = document.getElementsByName("ans")[0].value;
+    var why = document.getElementsByName("why")[0].value;
+      
+    if (isNaN(ans)) {
+		alert("Please use number!");
+		return 1;
+    }
+	if (parseInt(ans) < 0)
+	{
+		alert("Please use positive number!");
+		return 2;
+	}
+	if (parseInt(ans) > 150)
+	{
+		alert("Please use human age, not computer!");
+		return 3;
+	}
+ 
+    return 0;
+}
+
+//TDD = test driven development
+function test()
+{
+	document.getElementsByName("ans")[0].value = "this is not a number";
+    if (decide() == 0) {
+       alert("bug!"); 
+    }
+	
+	document.getElementsByName("ans")[0].value = "65";
+    if (decide() != 0) {
+       alert("bug!"); 
+    }
+	
+	document.getElementsByName("ans")[0].value = "-1";
+    if (decide() == 0) {
+       alert("bug!"); 
+    }
+
+	document.getElementsByName("ans")[0].value = "151";
+    if (decide() == 0) {
+       alert("bug!"); 
+    }
+}
+</script>
+
+
+<p>Made on 2018/09/30 by Masashi Dojo and Amil Khanzada with ZenIT style.</p>
