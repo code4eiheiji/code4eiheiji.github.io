@@ -1,0 +1,40 @@
+<title>Fruit Website</title>
+
+<h1>Fruit Website</h1>
+I like apples.<br>
+Do you like apple?
+
+<h2>Tell me your favorite fruit</h2>
+<input type="text" name="fruit"><br>
+<input type="button" onclick="decide()" value="Submit">
+<input type="button" onclick="test()" value="Test">
+
+<script>
+function tell_color(fruit)
+{
+	if (fruit == "apple")
+		return "red";
+	
+	if (fruit == "lemon" || fruit == "banana")
+		return "yellow";
+}
+
+function decide()
+{
+    var fruit = document.getElementsByName("fruit")[0].value;
+	alert(tell_color(fruit));
+		
+    return "";
+}
+
+//TDD = test driven development
+function test()
+{
+    if (tell_color("apple") != "red" ||
+	    tell_color("banana") != "yellow" ||
+		tell_color("lemon") != "yellow")
+       alert("bug!");
+	else
+		alert("no bug!");
+}
+</script>
