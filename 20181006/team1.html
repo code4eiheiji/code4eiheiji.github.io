@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Amil is GOD</title>
+  <h1>県庁所在地</h1>
+  I love JAPAN!!<br>
+  Do you like JAPAN?
+</head>
+  
+<h2>Tell me your favorite prefectoral capital</h2>
+<input type="text" name="pref"><br>
+<input type="button" onclick="decide()" value="Submit">
+  <input type="button" onclick="test()" value="Test"/><br/><br/>
+  <h1>県庁所在地は？</h1>
+<input type="button" onclick="nagano()" value="長野"/>
+<input type="button" onclick="fukui()" value="福井"/>  
+  
+<script>
+  
+   function nagano()
+  {
+  alert("松本市です！")
+  }
+  function fukui()
+  {
+  alert("福井市です！")
+  }
+  
+function tell_pc(pref)
+  {
+    if (pref == "Fukui")
+      return "Fukui";
+    if (pref == "Nagano")
+      return "Matsumoto";
+    if (pref == "Ishikawa")
+      return "Kanazawa";
+  }
+function decide()
+  {
+   var pref =
+       document.getElementsByName("pref")[0].value;
+    alert(tell_pc(pref));
+  }
+  
+function test()
+  {
+    if(tell_pc("Fukui") != "Fukui")
+      alert("bug!");
+    else if (tell_pc("Nagano") != "Matsumoto")
+      alert("bug!");
+    else if (teli_pc("Ishikawa") != "Kanazawa")
+      alert("bug!")
+    else
+      alert("no bug!");
+  }
+  
+</script>
+  
+</html>
