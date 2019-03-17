@@ -1,0 +1,55 @@
+<h1>Fruit -> Color</h1>
+
+<input type="text" name="question"><br>
+
+<input type="button" onclick="submit()" value="Submit">
+<input type="button" onclick="test()" value="Test">
+
+<script>
+//TDD = test driven development
+
+function submit()
+{
+    alert(reply());
+}
+function reply()
+{
+    return "yellow"
+}
+  
+function test()
+{
+    //test1();
+    test2();
+}
+function test1()
+{
+    if (reply() != "red") {
+       alert("bug!"); 
+    }
+    else {
+       alert("no bug!");
+    }
+}
+function test2()
+{
+    setForm("banana");
+    equal(reply(), "yellow");
+}
+  
+// 見っちゃだめよ
+  function setForm(value)
+  {
+    document.getElementsByName("question")[0].value = value;
+  }
+  function equal(a, b)
+  {
+      if (a != b) {
+        alert("bug!")
+      }
+      else {
+        alert("no bug!")
+      }
+  }
+
+</script>
