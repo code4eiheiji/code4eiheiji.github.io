@@ -6,53 +6,49 @@
 <input type="button" onclick="test()" value="Test">
 
 <script>
-//TDD = test driven development
+// 実装
 
 function submit()
 {
     alert(reply());
 }
+
 function reply()
 {
     return "yellow"
 }
   
+// テスト
+
 function test()
 {
-    //test1();
-    test2();
-}
-function test1()
-{
-    if (reply() != "red") {
-       alert("bug!"); 
-    }
-    else {
-       alert("no bug!");
-    }
-}
-function test2()
-{
+    console.log("=== テスト実行 ===")
+    
+    
+    setForm("apple");
+    equal(reply(), "red");
+  
+  
     setForm("banana");
     equal(reply(), "yellow");
-}
   
+
+}
+   
 // 見っちゃだめよ
+  
   function setForm(value)
   {
     document.getElementsByName("question")[0].value = value;
   }
+  
   function equal(a, b)
   {
       if (a != b) {
-        console.log("Bug! 失敗しました", b)
-        //alert("bug!")
+        console.log(b + " : 失敗しました")
       }
       else {
-        console.log(b + " :成功しました")
-        //alert("no bug!")
+        console.log(b + " : 成功しました")
       }
   }
-
 </script>
-
