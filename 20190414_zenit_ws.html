@@ -45,11 +45,14 @@ function test2()
   function equal(a, b)
   {
       if (a != b) {
-        alert("bug!")
+        console.log("Bug! 失敗しました", b)
+        //alert("bug!")
       }
       else {
-        alert("no bug!")
+        console.log(b + " :成功しました")
+        //alert("no bug!")
       }
   }
 
 </script>
+
