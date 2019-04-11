@@ -1,54 +1,48 @@
-<h1>Fruit -> Color</h1>
+<h1>Color -> Fruit</h1>
 
-<input type="text" name="question"><br>
+<input type="text" name="color"><br>
 
 <input type="button" onclick="submit()" value="Submit">
 <input type="button" onclick="test()" value="Test">
 
 <script>
-// 実装
+ function submit()
+ {
+   alert(determine(getForm()))
+ }
+ function determine(color)
+ {
+     switch (color) {
+       case 'apple':
+	   case 'strawberry':
+         return 'red'
+       case 'banana':
+         return 'yellow'
+       default:
+         return ''
+     }
+ }
 
-function submit()
-{
-    alert(reply());
-}
+ function test()
+ {
+     console.log("=== Testing ===")
 
-function reply()
-{
-    return "yellow"
-}
-  
-// テスト
+     matches("red", "apple",)
 
-function test()
-{
-    console.log("=== テスト実行 ===")
-    
-    
-    setForm("apple");
-    equal(reply(), "red");
-  
-  
-    setForm("banana");
-    equal(reply(), "yellow");
-  
+ }
 
-}
-   
-// 見っちゃだめよ
-  
-  function setForm(value)
-  {
-    document.getElementsByName("question")[0].value = value;
-  }
-  
-  function equal(a, b)
-  {
-      if (a != b) {
-        console.log(b + " : 失敗しました")
-      }
-      else {
-        console.log(b + " : 成功しました")
-      }
-  }
+ function getForm() {
+   return document.getElementsByName("fruit")[0].value
+ }
+
+ // Test Framework
+ function matches(fruit, color)
+ {
+   if (determine(fruit) == color) {
+     console.log(fruit + " : OK")
+   }
+   else {
+     console.log(fruit + " : Bad")
+   }
+ }
 </script>
