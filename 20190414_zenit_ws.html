@@ -1,6 +1,6 @@
-<h1>Color -> Fruit</h1>
+<h1>Fruit -> Color</h1>
 
-<input type="text" name="color"><br>
+<input type="text" name="fruit"><br>
 
 <input type="button" onclick="submit()" value="Submit">
 <input type="button" onclick="test()" value="Test">
@@ -10,9 +10,9 @@
  {
    alert(determine(getForm()))
  }
- function determine(color)
+ function determine(fruit)
  {
-     switch (color) {
+     switch (fruit) {
        case 'apple':
 	   case 'strawberry':
          return 'red'
@@ -27,7 +27,10 @@
  {
      console.log("=== Testing ===")
 
-     matches("red", "apple",)
+     matches("apple", "red")
+     matches("banana", "yellow")
+	 matches("strawberry", "red")
+     matches("","")
 
  }
 
