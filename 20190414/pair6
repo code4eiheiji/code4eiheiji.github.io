@@ -1,0 +1,54 @@
+<h1>動物 ->鳴き声（日本語・英語）</h1>
+
+<input type="text" name="fruit"><br>
+
+<input type="button" onclick="submit()" value="いいね">
+<input type="button" onclick="test()" value="試してね">
+
+<script>
+ function submit()
+ {
+   alert(determine(getForm()))
+ }
+ function determine(fruit)
+ {
+     switch (fruit) {
+       case '犬':
+         return 'わんわん'
+       case '洋犬':
+         return 'vowwow'
+       case '象':
+         return 'パオーン'
+       case '洋象':
+         return 'pawoo'
+         
+        
+         
+       default:
+         return ''
+     }
+ }
+ function test()
+ {
+     console.log("=== Testing ===")
+     matches("犬", "わんわん")
+     matches("洋犬", "vowwow")
+     matches("象", "パオーン")
+     matches("洋象", "pawoo")
+     
+     
+ }
+ function getForm() {
+   return document.getElementsByName("fruit")[0].value
+ }
+ // Test Framework
+ function matches(fruit, color)
+ {
+   if (determine(fruit) == color) {
+     console.log(fruit + " : OK")
+   }
+   else {
+     console.log(fruit + " : Bad")
+   }
+ }
+</script>
